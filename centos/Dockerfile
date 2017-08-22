@@ -5,8 +5,8 @@ ENV NEO_CLI_VERSION 2.1.0
 ENV NEO_CLI_SHA256 948396DD7EB65A1C9367183C2A9BC9D711EA1AFCD4E5FEEA426FDC4B66BD01B2
 ENV PATH="/opt/dotnet:${PATH}"
 
-RUN yum -y update && \
-    rpmkeys --import file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 && \
+RUN rpmkeys --import file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 && \
+    yum -y update && \
     yum -y install unzip libunwind libicu epel-release
 
 RUN rpmkeys --import file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7 && \
