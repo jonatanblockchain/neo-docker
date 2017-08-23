@@ -18,11 +18,11 @@ RUN rpmkeys --import file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7 \
     && yum -y install leveldb-devel \
     && yum clean all
 
-RUN curl -sSL -o dotnet.tar.gz $DOTNET_SDK_DOWNLOAD_URL \
+RUN curl -sSL $DOTNET_SDK_DOWNLOAD_URL --output dotnet.tar.gz \
     && mkdir -p /opt/dotnet && tar zxf dotnet.tar.gz -C /opt/dotnet \
     && rm -rf dotnet.tar.gz
 
-RUN curl -sSL -o neo-cli-centos.zip $NEOCLI_DOWNLOAD_URL \
+RUN curl -sSL $NEOCLI_DOWNLOAD_URL --output neo-cli-centos.zip \
     && echo "$NEOCLI_SHA256 *neo-cli-centos.zip" | sha256sum -c - \
     && unzip neo-cli-centos.zip -d /opt/ \
     && rm -rf neo-cli-centos.zip
