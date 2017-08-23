@@ -1,3 +1,5 @@
+# neo-cli-centos7
+
 FROM centos:centos7
 MAINTAINER Jonatan <jonatan.blockchain@gmail.com>
 
