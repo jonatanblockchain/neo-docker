@@ -13,11 +13,11 @@ ENV NEOCLI_RELEASE neo-cli-centos.7-x64.zip
 ENV NEOCLI_DOWNLOAD_URL https://github.com/neo-project/neo-cli/releases/download/v$NEOCLI_VERSION/$NEOCLI_RELEASE
 
 RUN rpmkeys --import file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 \
-    && yum -y update \
-    && yum -y install unzip libunwind libicu epel-release
+    && yum update \
+    && yum install -y --setopt=tsflags=nodocs unzip libunwind libicu epel-release
 
 RUN rpmkeys --import file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7 \
-    && yum -y install leveldb-devel \
+    && yum install -y --setopt=tsflags=nodocs leveldb-devel \
     && yum clean all
 
 RUN curl -sSL -o dotnet.tar.gz $DOTNET_SDK_DOWNLOAD_URL \
