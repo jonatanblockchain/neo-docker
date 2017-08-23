@@ -2,7 +2,7 @@ FROM centos:latest
 LABEL maintainer="Jonatan Blockchain"
 
 ENV DOTNET_SDK_VERSION dotnet-sdk-2.0.0-linux-x64
-ENV DOTNET_SDK_DOWNLOAD_URL https://aka.ms/$DOTNET_VERSION
+ENV DOTNET_SDK_DOWNLOAD_URL https://aka.ms/$DOTNET_SDK_VERSION
 ENV PATH="/opt/dotnet:${PATH}"
 
 ENV NEOCLI_VERSION 2.1.0
