@@ -1,15 +1,14 @@
-FROM centos:centos7
+FROM centos:latest
 LABEL maintainer="Jonatan Blockchain"
 
 ENV DOTNET_VERSION dotnet-sdk-2.0.0-linux-x64
 ENV DOTNET_URL https://aka.ms/$DOTNET_VERSION
+ENV PATH="/opt/dotnet:${PATH}"
 
 ENV NEOCLI_VERSION 2.1.0
 ENV NEOCLI_SHA256 948396DD7EB65A1C9367183C2A9BC9D711EA1AFCD4E5FEEA426FDC4B66BD01B2
 ENV NEOCLI_RELEASE neo-cli-centos.7-x64.zip
 ENV NEOCLI_URL https://github.com/neo-project/neo-cli/releases/download/v$NEOCLI_VERSION/$NEOCLI_RELEASE
-
-ENV PATH="/opt/dotnet:${PATH}"
 
 RUN rpmkeys --import file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 && \
     yum -y update && \
