@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM centos:centos7
 LABEL maintainer="Jonatan Blockchain"
 
 ENV DOTNET_SDK_VERSION dotnet-sdk-2.0.0-linux-x64
