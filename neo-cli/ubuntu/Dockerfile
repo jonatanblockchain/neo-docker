@@ -1,4 +1,4 @@
-# neo-cli-centos7
+# neo-cli-ubuntu16.04
 
 FROM centos:centos7
 MAINTAINER Jonatan <jonatan.blockchain@gmail.com>
