@@ -37,7 +37,7 @@ RUN curl -sSL --output dotnet.tar.gz $DOTNET_SDK_DOWNLOAD_URL \
     && mkdir -p /opt/dotnet && tar zxf dotnet.tar.gz -C /opt/dotnet \
     && rm -rf dotnet.tar.gz
 
-RUN curl -sSL -o neo-cli-ubuntu.zip $NEOCLI_DOWNLOAD_URL \
+RUN curl -sSL --output neo-cli-ubuntu.zip $NEOCLI_DOWNLOAD_URL \
     && echo "$NEOCLI_SHA256 *neo-cli-ubuntu.zip" | sha256sum -c - \
     && unzip neo-cli-ubuntu.zip -d /opt/ \
     && rm -rf neo-cli-ubuntu.zip
