@@ -28,9 +28,7 @@ RUN apt-get -y install --no-install-recommends \
     libuuid1 \
     zlib1g
 
-RUN apt-get install -y \
-    libleveldb-dev \
-    libleveldb1v5 \
+RUN apt-get -y install libleveldb-dev libleveldb1v5 \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -sSL --output dotnet.tar.gz $DOTNET_SDK_DOWNLOAD_URL \
