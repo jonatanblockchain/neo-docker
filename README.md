@@ -1,3 +1,4 @@
+
 <h1 align="center">neo-docker</h1>
 
 <p align="center">
@@ -36,6 +37,7 @@ CONTAINER ID        IMAGE               COMMAND                CREATED          
 ```
 ```
 PS C:\neo-docker\neo-cli\centos> docker attach 5250679a40cb
+(press Enter)
 neo>
 neo>show state
  Height: 1000/11746, Nodes: 6
