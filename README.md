@@ -7,7 +7,7 @@
 ## What?
 
 - Docker images for testing and interacting [NEO](http://neo.org/) blockchain.
-- Docker images are ephemeral, at this moment persistence is not implemented. The data won’t persist when that container is no longer running.
+- Docker images are ephemeral, at this moment persistence is not implemented. **The data won’t persist when that container is no longer running.**
 
 ## Quick Start
 
