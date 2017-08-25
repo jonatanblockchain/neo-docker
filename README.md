@@ -19,7 +19,7 @@ PS C:\> cd .\neo-docker\neo-cli\centos
 PS C:\neo-docker\neo-cli\centos> docker build -t neo-cli .
 ```
 ```
-PS C:\neo-docker\neo-cli\centos>  docker images
+PS C:\neo-docker\neo-cli\centos> docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 neo-cli             latest              1e040946054c        6 seconds ago       694MB
 centos              centos7             328edcd84f1b        3 weeks ago         193MB
