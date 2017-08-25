@@ -13,7 +13,7 @@ ENV NEOCLI_RELEASE neo-cli-ubuntu.16.04-x64.zip
 ENV NEOCLI_DOWNLOAD_URL https://github.com/neo-project/neo-cli/releases/download/v$NEOCLI_VERSION/$NEOCLI_RELEASE
 
 RUN apt-get update \ 
-    && apt-get -y install unzip curl apt-transport-https ca-certificates
+    && apt-get -y install unzip dialog curl apt-transport-https ca-certificates
 
 RUN apt-get -y install --no-install-recommends \
     libc6 \
