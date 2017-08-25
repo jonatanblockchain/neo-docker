@@ -1,6 +1,6 @@
 #neo-cli-windows
 
-FROM microsoft/dotnet:2.0-sdk-nanoserver
+FROM microsoft/dotnet:2.0-sdk-nanoserver
 MAINTAINER Jonatan <jonatan.blockchain@gmail.com>
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
