@@ -1,4 +1,4 @@
-#neo-cli-windows
+#neo-cli-windows10
 
 FROM microsoft/dotnet:2.0-sdk-nanoserver
 MAINTAINER Jonatan <jonatan.blockchain@gmail.com>
