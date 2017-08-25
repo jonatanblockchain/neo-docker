@@ -4,3 +4,20 @@ FROM microsoft/dotnet:2.0-sdk-nanoserver
 MAINTAINER Jonatan <jonatan.blockchain@gmail.com>
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+
+ENV DOTNET_SDK_VERSION 2.0.0
+ENV DOTNET_SDK_DOWNLOAD_URL https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$DOTNET_SDK_VERSION/dotnet-sdk-$DOTNET_SDK_VERSION-win-x64.zip
+ENV DOTNET_SDK_DOWNLOAD_SHA C0942299437541C6B173F71213B43D2CC1E0EBC5C75F78948C0C6279A8D1C5B293999C93863392A4219F819B1DDD73D95112930B08EC8DDAA89918931E492DB0
+
+RUN Invoke-WebRequest $Env:NEOCLI_DOWNLOAD_URL -OutFile neo-cli-win10.zip; \
+    if ((Get-FileHash neo-cli-win10.zip -Algorithm sha256).Hash -ne $Env:NEOCLI_SHA256) { \
+        Write-Host 'CHECKSUM VERIFICATION FAILED!'; \
+        exit 1; \
+    }; \
+    \
+    Expand-Archive neo-cli-win10.zip -DestinationPath $Env:SystemDrive; \
+    Remove-Item -Force neo-cli-win10.zip
+
+EXPOSE 10333
+WORKDIR c:\\neo-cli
+ENTRYPOINT [ "dotnet", "neo-cli.dll" ]
