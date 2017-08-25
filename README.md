@@ -6,7 +6,7 @@
 
 ## What?
 
-- Docker images for testing and interacting [NEO](http://neo.org/) blockchain.
+- Docker images for testing and interacting with [NEO](http://neo.org/) blockchain.
 - Docker images are ephemeral, at this moment persistence is not implemented. **The data (wallets/accounts/priv keys) won’t persist when that container is no longer running.**
 
 ## Quick Start
