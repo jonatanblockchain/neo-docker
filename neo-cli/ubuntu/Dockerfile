@@ -3,8 +3,9 @@
 FROM ubuntu:16.04
 MAINTAINER Jonatan <jonatan.blockchain@gmail.com>
 
-ENV DOTNET_SDK_VERSION dotnet-sdk-2.0.0-linux-x64
-ENV DOTNET_SDK_DOWNLOAD_URL https://aka.ms/$DOTNET_SDK_VERSION
+ENV DOTNET_SDK_VERSION 2.0.0
+ENV DOTNET_SDK_RELEASE dotnet-sdk-2.0.0-linux-x64.tar.gz
+ENV DOTNET_SDK_DOWNLOAD_URL https://download.microsoft.com/download/1/B/4/1B4DE605-8378-47A5-B01B-2C79D6C55519/$DOTNET_SDK_RELEASE
 ENV PATH="/opt/dotnet:${PATH}"
 
 ENV NEOCLI_VERSION 2.1.0
