@@ -30,7 +30,7 @@ RUN apt-get -y install --no-install-recommends \
     zlib1g
 
 RUN apt-get -y install libleveldb-dev libleveldb1v5 \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /tmp/* /var/lib/apt/lists/* /var/cache/apt/*
 
 RUN curl -sSL --output dotnet.tar.gz $DOTNET_SDK_DOWNLOAD_URL \
     && mkdir -p /opt/dotnet && tar zxf dotnet.tar.gz -C /opt/dotnet \
