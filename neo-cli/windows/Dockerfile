@@ -19,7 +19,6 @@ RUN Invoke-WebRequest $Env:NEOCLI_DOWNLOAD_URL -OutFile neo-cli-win10.zip; \
     Expand-Archive neo-cli-win10.zip -DestinationPath $Env:SystemDrive; \
     Remove-Item -Force neo-cli-win10.zip
 
-#/bug: libdeveldb.dll is missing - extract from neo-cli-portable?
 
 EXPOSE 10333
 WORKDIR c:\\neo-cli
