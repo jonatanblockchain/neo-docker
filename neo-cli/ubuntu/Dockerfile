@@ -13,24 +13,23 @@ ENV NEOCLI_SHA256 97C90F71262D3009A8DE1BD8FF08764E30658A1F1D831AEFC3C1615B856116
 ENV NEOCLI_RELEASE neo-cli-ubuntu.16.04-x64.zip
 ENV NEOCLI_DOWNLOAD_URL https://github.com/neo-project/neo-cli/releases/download/v$NEOCLI_VERSION/$NEOCLI_RELEASE
 
-RUN apt-get update \ 
-    && apt-get -y install unzip dialog curl apt-transport-https ca-certificates
-
-RUN apt-get -y install --no-install-recommends \
-    libc6 \
-    libcurl3 \
-    libgcc1 \
-    libgssapi-krb5-2 \
-    libicu-dev \
-    liblttng-ust0 \
-    libssl1.0.0 \
-    libstdc++6 \
-    libunwind8 \
-    libuuid1 \
-    zlib1g
-
-RUN apt-get -y install libleveldb-dev libleveldb1v5 \
-    && rm -rf /tmp/* /var/lib/apt/lists/* /var/cache/apt/*
+RUN apt-get update && \
+    apt-get -y install unzip dialog curl apt-transport-https ca-certificates && \
+    apt-get -y install --no-install-recommends \
+        libc6 \
+        libcurl3 \
+        libgcc1 \
+        libgssapi-krb5-2 \
+        libicu-dev \
+        liblttng-ust0 \
+        libssl1.0.0 \
+        libstdc++6 \
+        libunwind8 \
+        libuuid1 \
+        zlib1g \
+        && \
+    apt-get -y install libleveldb-dev libleveldb1v5 && \
+    rm -rf /tmp/* /var/lib/apt/lists/* /var/cache/apt/*
 
 RUN curl -sSL --output dotnet.tar.gz $DOTNET_SDK_DOWNLOAD_URL \
     && mkdir -p /opt/dotnet && tar zxf dotnet.tar.gz -C /opt/dotnet \

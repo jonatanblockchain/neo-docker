@@ -15,9 +15,8 @@ ENV NEOCLI_DOWNLOAD_URL https://github.com/neo-project/neo-cli/releases/download
 
 RUN rpmkeys --import file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 \
     && yum update \
-    && yum install -y --setopt=tsflags=nodocs unzip libunwind libicu epel-release
-
-RUN rpmkeys --import file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7 \
+    && yum install -y --setopt=tsflags=nodocs unzip libunwind libicu epel-release \
+    && rpmkeys --import file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7 \
     && yum install -y --setopt=tsflags=nodocs leveldb-devel \
     && yum clean all
 
