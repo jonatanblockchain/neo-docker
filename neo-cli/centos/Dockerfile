@@ -30,6 +30,7 @@ RUN curl -sSL -o neo-cli-centos.zip $NEOCLI_DOWNLOAD_URL \
     && unzip neo-cli-centos.zip -d /opt/ \
     && rm -rf neo-cli-centos.zip
 
+
 EXPOSE 10333
 WORKDIR /opt/neo-cli
 ENTRYPOINT [ "dotnet", "neo-cli.dll" ]
