@@ -19,7 +19,7 @@ RUN Invoke-WebRequest $Env:NEOCLI_DOWNLOAD_URL -OutFile neo-cli-win10.zip; \
     Expand-Archive neo-cli-win10.zip -DestinationPath $Env:SystemDrive; \
     Remove-Item -Force neo-cli-win10.zip
 
-#libdeveldb?
+#libdeveldb missing?
 
 EXPOSE 10333
 WORKDIR c:\\neo-cli
